@@ -20,6 +20,7 @@
 // Key which is pressed to use backup card
 #define BACKUP_KEY 'C'
 
+// Delimiter key for the card files
 #define DELIM_KEY ';'
 
 // Standard Namespace
