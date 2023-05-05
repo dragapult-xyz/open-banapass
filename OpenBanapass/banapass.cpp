@@ -9,19 +9,19 @@
 #include <format>
 
 // Banapassport API Version
-#define BANA_API_VERSION "Ver 1.6.0"
+constexpr auto BANA_API_VERSION = "Ver 1.6.0";
 
 // Card filename to watch for changes
-#define CARD_FILENAME "card.txt"
+constexpr auto CARD_FILENAME = "card.txt";
 
 // Card filename to use as backup 'if key is pressed'
-#define BACKUP_FILENAME "card.backup.txt"
+constexpr auto BACKUP_FILENAME = "card.backup.txt";
 
 // Key which is pressed to use backup card
-#define BACKUP_KEY 'C'
+constexpr auto BACKUP_KEY = 'C';
 
 // Delimiter key for the card files
-#define DELIM_KEY ';'
+constexpr auto DELIM_KEY = ';';
 
 // Standard Namespace
 using namespace std;
@@ -112,7 +112,7 @@ void createCard()
 // clearCard(filename: char*): void
 // Given a filename, clears the contents
 // in the given file.
-void clearCard(char* filename) 
+void clearCard(const char* filename) 
 {
 	// If the backup filename already exists, do not create it
 	if (std::filesystem::exists(filename))
@@ -138,7 +138,7 @@ void clearCard(char* filename)
 // Given a filename, attempts to open
 // the given file and writes the card
 // properties to the given card struct.
-bool getCard(char * filename, Card* card) 
+bool getCard(const char * filename, Card* card) 
 {
 	// Create the input filestream
 	std::ifstream stream;
