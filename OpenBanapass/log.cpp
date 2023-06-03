@@ -8,9 +8,6 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
-// Debug Mode
-#ifdef _DEBUG
-
 // Log File Name
 #define LOG_FILE "bngrw.log"
 
@@ -80,9 +77,3 @@ void log(const char* format, ...)
 #endif
 	va_end(args);
 }
-
-// Release Mode
-#else
-// Do nothing with log function call
-void log(const char* format, ...) {}
-#endif

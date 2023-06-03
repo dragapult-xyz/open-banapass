@@ -6,12 +6,10 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-#include <format>
-// #include <mutex>
 #include <future>
 
 // Open Banapassport Version (For Logging)
-constexpr auto OPEN_BANA_VERSION = "2.1.0";
+constexpr auto OPEN_BANA_VERSION = "2.2.0";
 
 // Banapassport API Version
 constexpr auto BANA_API_VERSION = "Ver 1.6.0";
@@ -28,7 +26,7 @@ constexpr auto BACKUP_KEY = 'C';
 // Delimiter key for the card files
 constexpr auto DELIM_KEY = ';';
 
-// Sleep delay (wait for thread) in ms
+// bngrwWaitTouchTimeout (in ms)
 const auto WAIT_TOUCH_TIMEOUT = 250;
 
 // Standard Namespace
@@ -170,12 +168,18 @@ bool getCard(const char * filename, Card* card)
 		// Get the substring for the chip id
 		card->chipId = rawCard.substr(0, index);
 
-		log("Chip ID: %s\n", (card->chipId).c_str());
+#ifdef _DEBUG
+		// Only log chip id in debug mode
+		log("Chip ID: '%s'\n", (card->chipId).c_str());
+#endif
 
 		// Get the substring for the access code
 		card->accessCode = rawCard.substr(index + 1, rawCard.length() - 1);
 
-		log("Access Code: %s\n", (card->accessCode).c_str());
+#ifdef _DEBUG
+		// Only log access code in debug mode
+		log("Access Code: '%s'\n", (card->accessCode).c_str());
+#endif
 
 		// Success, return true
 		return true;
@@ -376,20 +380,30 @@ extern "C"
 		// Copy the access code into the raw card data
 		memcpy(rawCardData + 0x50, card->accessCode.c_str(), card->accessCode.size() + 1);
 
-		log("Access code written ...\n");
+#ifdef _DEBUG
+		// Only log access code in debug mode
+		log("Access code '%s' written ...\n", (rawCardData + 0x50));
+#else	
+		log("Access code written ...\n", (rawCardData + 0x50));
+#endif
 
 		// Copy the chip id into the raw card data
 		memcpy(rawCardData + 0x2C, card->chipId.c_str(), card->chipId.size() + 1);
 
-		log("Card chip id written ...\n");
+#ifdef _DEBUG
+		// Only log chip id in debug mode
+		log("Card chip '%s' id written ...\n", (rawCardData + 0x2C));
+#else
+		log("Card chip id written ...\n", (rawCardData + 0x2C));
+#endif
+
+		log("Callback thread started ...\n");
 
 		// Create the callback thread
 		std::thread t(callback, 0, 0, rawCardData, e);
 
 		// Wait for thread to end
 		t.join();
-
-		log("Callback handler thread end.\n");
 	}
 
 	int BngRwReqWaitTouch(UINT a, int maxIntSomehow, UINT c, void (*callback)(int, int, void*, void*), void* e)
@@ -432,7 +446,7 @@ extern "C"
 			// Detach the thread
 			t.detach();
 
-			// Wait 250ms before continuing
+			// Wait 'timeout' ms before continuing
 			std::this_thread::sleep_for(std::chrono::milliseconds(WAIT_TOUCH_TIMEOUT));
 
 			// Success response

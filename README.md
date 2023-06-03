@@ -77,6 +77,12 @@ you would like to recompile the application yourself. These are as follows:
 
 Please see below for the change history for the software.
 
+## Ver. 2.2.0
+
+Added logging to release build, re-added compiler 
+optimisation flags after testing, retargeted 
+project for cpp standard 17
+
 ## Ver. 2.1.0
 
 Fixed issue with cardChipId being truncated, updated
