@@ -28,6 +28,9 @@ card to a filename `card.txt` which is then processed by the open-banapass.
 After reading, the `card.txt` contents will be cleared until another card is
 tapped, and more data is written. 
 
+The `Py-Banapass` project is currently private, however it will be made 
+open source once it has been cleaned up and reviewed.
+
 ### Button Press Support
 
 This software still supports the traditional method of tapping 'C' on the keyboard
@@ -48,8 +51,8 @@ that you may revert back to them should you need or want to in the future.
 1. Navigate to the files of the game you intend to play, and create a backup of (or rename)
 the existing `bngrw.dll` file. (e.g. `bngrw-backup.dll`)
 
-2. Navigate to the [Releases](https://github.com/dragapult-xyz/open-banapass/releases/) tab and download the latest `Release.zip` archive. If you would like event logs to be written, 
-please download the `Debug.zip` archive. 
+2. Navigate to the [Releases](https://github.com/dragapult-xyz/open-banapass/releases/) tab and download the latest `Release.zip` archive. 
+  - If you find the release version is not working for you, or you would like event logs to be written please download the `Debug.zip` archive. 
 
 3. Open the downloaded archive, and copy the `bngrw.dll` file within to the root directory of the game you want to play.
 
