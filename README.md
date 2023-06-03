@@ -75,14 +75,13 @@ you would like to recompile the application yourself. These are as follows:
 
 Please see below for a table of Banapassport API versions for known titles.
 This does not appear to be important for the execution of the software, however
-may be worth looking into if you experience issues.
+may be worth looking into if you experience issues. If you have any version
+numbers to add, please feel free to open an issue or pull request.
 
 | Game | Version Number |
 | ---- | -------------- | 
 | Maximum Tune 6 | `Ver 1.6.0` |
 | Maximum Tune 6R | `Ver 1.6.1` |
-
-Please feel free to submit more values for this table if you are able.
 
 ## Special thanks
  - [Luna](https://github.com/ry00001) - Original version
