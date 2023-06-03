@@ -36,12 +36,9 @@ file, which will be randomly generated if it does not exist.
 
 ### Limitations
 
-Please note before you use this software that **existing card files
-converted to the new format may not be compatible**, and may not be
-sent to the upstream server correctly. 
-
-It is not currently known why this is the case, however I will be 
-investigating the issue in the hope it can be resolved in the future. 
+Please note before you use this software that **existing card files converted 
+to the new format may not be compatible**, and may not be sent to the upstream 
+server correctly.
 
 Always be sure to back up your existing card and `bngrw.dll` files, to ensure
 that you may revert back to them should you need or want to in the future.
@@ -79,6 +76,11 @@ you would like to recompile the application yourself. These are as follows:
 ## Changelog
 
 Please see below for the change history for the software.
+
+## Ver. 2.1.0
+
+Fixed issue with cardChipId being truncated, updated
+readme, added version logging to debug version
 
 ## Ver. 2.0.1
 

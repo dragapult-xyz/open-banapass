@@ -10,6 +10,9 @@
 // #include <mutex>
 #include <future>
 
+// Open Banapassport Version (For Logging)
+constexpr auto OPEN_BANA_VERSION = "2.1.0";
+
 // Banapassport API Version
 constexpr auto BANA_API_VERSION = "Ver 1.6.0";
 
@@ -165,10 +168,14 @@ bool getCard(const char * filename, Card* card)
 	if (index != std::string::npos)
 	{
 		// Get the substring for the chip id
-		card->chipId = rawCard.substr(0, index - 1);
+		card->chipId = rawCard.substr(0, index);
+
+		log("Chip ID: %s\n", (card->chipId).c_str());
 
 		// Get the substring for the access code
 		card->accessCode = rawCard.substr(index + 1, rawCard.length() - 1);
+
+		log("Access Code: %s\n", (card->accessCode).c_str());
 
 		// Success, return true
 		return true;
@@ -196,6 +203,7 @@ extern "C"
 
 	long BngRwInit()
 	{
+		log("Open Banapass Ver. %s is starting ...\n", OPEN_BANA_VERSION);
 		log("BngRwInit()\n");
 		return 0;
 	}
