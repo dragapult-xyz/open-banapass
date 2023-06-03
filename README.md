@@ -69,7 +69,7 @@ you would like to recompile the application yourself. These are as follows:
 | `banapass.cpp` | `BACKUP_KEY` | `C` | Key which is pressed to use backup card |
 | `banapass.cpp` | `DELIM_KEY` | `;` | Delimiter character for the card files |
 | `banapass.cpp` | `WAIT_TOUCH_TIMEOUT` | `250` | Time (in milliseconds) the card reader thread will wait before checking again |
-| `log.cpp` | `LOG_FILE` | `bngrw.log` | If using the debug version of the DLL, this file will be written to when events occur. If this value is deleted, no file logging will occur. This value is not defined in the release version of the DLL. |
+| `log.cpp` | `LOG_FILE` | `bngrw.log` | File logs will be written to. If not set, logs will be written to command line only. |
 
 ## Special thanks
  - [Luna](https://github.com/ry00001) - Original version
