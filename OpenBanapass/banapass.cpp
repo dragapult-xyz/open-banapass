@@ -11,7 +11,7 @@
 #include <future>
 
 // Banapassport API Version
-constexpr auto BANA_API_VERSION = "Ver 1.6.1";
+constexpr auto BANA_API_VERSION = "Ver 1.6.0";
 
 // Card filename which is monitored for changes
 constexpr auto CARD_FILENAME = "card.txt";
