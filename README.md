@@ -71,6 +71,18 @@ you would like to recompile the application yourself. These are as follows:
 | `banapass.cpp` | `WAIT_TOUCH_TIMEOUT` | `250` | Time (in milliseconds) the card reader thread will wait before checking again |
 | `log.cpp` | `LOG_FILE` | `bngrw.log` | File logs will be written to. If not set, logs will be written to command line only. |
 
+#### Banapassport API Versions
+
+Please see below for a table of Banapassport API versions for known titles.
+This does not appear to be important for the execution of the software, however
+may be worth looking into if you experience issues.
+
+| Game | Version Number |
+| Maximum Tune 6 | `Ver 1.6.0` |
+| Maximum Tune 6R | `Ver 1.6.1` |
+
+Please feel free to submit more values for this table if you are able.
+
 ## Special thanks
  - [Luna](https://github.com/ry00001) - Original version
  - [derole](https://derole.co.uk) - Code, technical help
