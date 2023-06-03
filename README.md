@@ -78,6 +78,7 @@ This does not appear to be important for the execution of the software, however
 may be worth looking into if you experience issues.
 
 | Game | Version Number |
+| ---- | -------------- | 
 | Maximum Tune 6 | `Ver 1.6.0` |
 | Maximum Tune 6R | `Ver 1.6.1` |
 
