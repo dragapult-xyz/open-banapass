@@ -28,6 +28,9 @@ card to a filename `card.txt` which is then processed by the open-banapass.
 After reading, the `card.txt` contents will be cleared until another card is
 tapped, and more data is written. 
 
+The `Py-Banapass` project is currently private, however it will be made 
+open source once it has been cleaned up and reviewed.
+
 ### Button Press Support
 
 This software still supports the traditional method of tapping 'C' on the keyboard
