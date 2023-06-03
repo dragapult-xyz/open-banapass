@@ -34,6 +34,28 @@ This software still supports the traditional method of tapping 'C' on the keyboa
 to trigger sending the card data. The card data sent is read from the `backup.card.txt`
 file, which will be randomly generated if it does not exist.
 
+### Limitations
+
+Please note before you use this software that **existing card files
+converted to the new format may not be compatible**, and may not be
+sent to the upstream server correctly. 
+
+It is not currently known why this is the case, however I will be 
+investigating the issue in the hope it can be resolved in the future. 
+
+Always be sure to back up your existing card and `bngrw.dll` files, to ensure
+that you may revert back to them should you need or want to in the future.
+
+### Installation
+
+1. Navigate to the files of the game you intend to play, and create a backup of (or rename)
+the existing `bngrw.dll` file. (e.g. `bngrw-backup.dll`)
+
+2. Navigate to the [Releases](https://github.com/dragapult-xyz/open-banapass/releases/) tab and download the latest `Release.zip` archive. If you would like event logs to be written, 
+please download the `Debug.zip` archive. 
+
+3. Open the downloaded archive, and copy the `bngrw.dll` file within to the root directory of the game you want to play.
+
 ### Advanced Settings
 
 There are a number of different viables which can be changed in the software, if
@@ -57,6 +79,10 @@ you would like to recompile the application yourself. These are as follows:
 ## Changelog
 
 Please see below for the change history for the software.
+
+## Ver. 2.0.1
+
+Updated readme
 
 ## Ver. 2.0.0
 
